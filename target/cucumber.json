@@ -1,0 +1,103 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-01-26T16:37:03.475Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4471829,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Menu options",
+        "description": "",
+        "id": "contacts-page;menu-options",
+        "after": [
+          {
+            "result": {
+              "duration": 241830631,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.tearDown(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6939977410,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "the user logged in as a \"driver\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"driver\"",
+                  "offset": 24
+                }
+              ],
+              "location": "NavigationMenuStepDefs.the_user_logged_in_as_a(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3343094714,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "the user should see following menu options",
+            "match": {
+              "location": "ContactsStepDefs.the_user_should_see_following_menu_options(String\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Fleet"
+                ]
+              },
+              {
+                "cells": [
+                  "Customers"
+                ]
+              },
+              {
+                "cells": [
+                  "Activities"
+                ]
+              },
+              {
+                "cells": [
+                  "System"
+                ]
+              }
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "Contacts Page",
+    "description": "",
+    "id": "contacts-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/Contacts.feature",
+    "tags": []
+  }
+]
