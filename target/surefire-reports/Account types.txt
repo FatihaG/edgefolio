@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: Account types
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 97.498 s <<< FAILURE! - in Account types
+Sales Manager(Account types)  Time elapsed: 34.993 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[Accounts - Customers]> but was:<[Dashboard]>
+
+Store Manager(Account types)  Time elapsed: 24.875 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[All - Campaigns - Marketing]> but was:<[Dashboard]>
+
