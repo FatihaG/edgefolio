@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
         // tags={"@driver", "VYT-123"}
         // tags = "@login and not @wip"
         // tags= {"@login","~@wip"}
-         tags="@smoke"
+         tags="@wip"
 )
 
 public class CukesRunner {

@@ -6,7 +6,7 @@ Feature: Contacts Page
     When the user navigates to "Customers" "Contacts"
     Then default page number should be 1
 
-  @wip
+
   Scenario: Menu options
     Given the user logged in as a "driver"
     Then the user should see following menu options
@@ -30,3 +30,10 @@ Feature: Contacts Page
      | user1         | John               | Doe     |
      |salesmanager101| Peyton             | Harber  |
      |storemanager85 | Marcella bnmbnmbmn | Huels   |
+
+   @wip
+   Scenario: contacts test with email
+     Given the user logged in as a "store manager"
+     And the user navigates to "Customers" "Contacts"
+     When the user clicks the "mbrackstone9@example.com" from contacts
+     Then the information should be same with the database

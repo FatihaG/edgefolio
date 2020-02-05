@@ -7,11 +7,14 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
     @Before
     public void setUp(){
-        System.out.println("\tThis is coming from BEFORE method");
+     //   Driver.get().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Driver.get().manage().window().fullscreen();
     }
 
     @After
@@ -20,7 +23,7 @@ public class Hooks {
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
             scenario.embed(screenshot,"image/png");
         }
-        Driver.closeDriver();
+      //  Driver.closeDriver();
     }
 
 }
