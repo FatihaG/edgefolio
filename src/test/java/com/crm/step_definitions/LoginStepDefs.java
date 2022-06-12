@@ -16,9 +16,7 @@ public class LoginStepDefs {
     public void cookie_pop_up_disappears() {
         LoginPage loginPage= new LoginPage();
         loginPage.cookieButton.click();
-        BrowserUtils.waitFor(2);
-        //Driver.get().switchTo().frame(1);
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(1);
 
     }
 

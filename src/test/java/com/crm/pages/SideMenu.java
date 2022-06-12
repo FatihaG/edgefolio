@@ -13,6 +13,12 @@ public class SideMenu extends BasePage {
     @FindBy(css="a[href='/app/crm/248/companies/']")
     public WebElement companyLink;
 
+    @FindBy(css="a[href='/app/crm/248/contacts/']")
+    public WebElement contactsLink;
+
+    @FindBy(css="a[href='/app/crm/248/deals/']")
+    public WebElement dealsLink;
+
 
 
 }

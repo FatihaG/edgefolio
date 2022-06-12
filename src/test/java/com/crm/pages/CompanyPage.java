@@ -7,11 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CompanyPage extends BasePage {
 
-    @FindBy(css="a.phone")
-    public WebElement phone;
-
-    @FindBy(css="a.email")
-    public WebElement email;
 
     @FindBy(id = "user-general-search")
     public WebElement search;

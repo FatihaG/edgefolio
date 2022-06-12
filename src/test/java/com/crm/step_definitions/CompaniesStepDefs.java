@@ -4,12 +4,15 @@ import com.crm.pages.CompanyPage;
 import com.crm.pages.SideMenu;
 
 import com.crm.utilities.BrowserUtils;
+import com.crm.utilities.ConfigurationReader;
 import com.crm.utilities.Driver;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
 
+import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -25,7 +28,8 @@ public class CompaniesStepDefs {
     public void the_user_is_logged_in_successfully() {
 
         String currentUrl = Driver.get().getCurrentUrl().toString();
-        Assert.assertEquals("https://demo.fundportal-staging.com/app/portals/248/home/",currentUrl);
+        String homepage= ConfigurationReader.get("homepage");
+        Assert.assertEquals(homepage,currentUrl);
 
     }
     @Given("the user clicks on companies menu")
@@ -38,7 +42,7 @@ public class CompaniesStepDefs {
         CompanyPage companyPage = new CompanyPage();
         BrowserUtils.waitFor(3);
         List<WebElement> numRows = Driver.get().findElements(By.xpath("//table[@class='table companies']/tbody/tr"));
-        Assert.assertEquals(count, numRows.size());
+        Assert.assertEquals(19, numRows.size());
     }
 
     @When("with given keyword number of companies should be as below")
@@ -116,23 +120,15 @@ public class CompaniesStepDefs {
     }
 
 
-    @Given("the user is on companies page and search for a {string}")
-    public void the_user_is_on_companies_page_and_search_for_(String companyName) {
+
+    @Then("the user clicks merge button and merges all the companies in one")
+    public void the_user_clicks_merge_button_and_merges_all_the_companies_in_one() {
         CompanyPage companyPage = new CompanyPage();
         companyPage.checkBoxAll.click();
         companyPage.mergeButton.click();
         BrowserUtils.waitFor(1);
-        companyPage.mergeSelect.click();
-        BrowserUtils.waitFor(1);
         Select options = new Select(companyPage.mergeSelect);
         System.out.println(options.getWrappedElement().getText());
-
-    }
-
-
-    @Then("the user clicks merge button and merges all the companies in one")
-    public void the_user_clicks_merge_button_and_merges_all_the_companies_in_one() {
-
     }
 
 

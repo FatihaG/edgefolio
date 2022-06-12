@@ -23,9 +23,6 @@ public class LoginPage extends BasePage {
     @FindBy(css="a.cc-btn.cc-dismiss")
     public WebElement cookieButton;
 
-    @FindBy(id="intercom-frame")
-    public WebElement iFrame;
-
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
