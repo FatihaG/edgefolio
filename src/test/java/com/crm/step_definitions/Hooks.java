@@ -1,13 +1,12 @@
-package com.vytrack.step_definitions;
+package com.crm.step_definitions;
 
-import com.vytrack.utilities.Driver;
-import io.cucumber.core.api.Scenario;
+import com.crm.utilities.Driver;
+//import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-
-import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
@@ -21,7 +20,7 @@ public class Hooks {
     public void tearDown(Scenario scenario){
         if(scenario.isFailed()){
             final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot,"image/png");
+            //scenario.embed(screenshot,"image/png");
         }
       //  Driver.closeDriver();
     }
