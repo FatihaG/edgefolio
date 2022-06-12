@@ -1,7 +1,9 @@
 package com.crm.pages;
 
+import com.crm.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CompanyPage extends BasePage {
 
@@ -37,5 +39,8 @@ public class CompanyPage extends BasePage {
 
     @FindBy(css="button.noButton")
     public WebElement noButton;
+    public CompanyPage(){
+        PageFactory.initElements(Driver.get(), this);
+    }
 
 }
