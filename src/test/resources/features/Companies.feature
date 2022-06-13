@@ -1,16 +1,16 @@
 Feature: Companies Page Features
 
-  @wip
+  @e2e
   Scenario: Bypass pop-up button
     Given the user is on the login page
     And cookie pop-up disappears
 
-  @wip
+  @e2e
   Scenario: Login as a fund manager
     When the user enter the login information
     Then the user should be able to login to crm page
 
-  @wip
+
   Scenario: List first 20 on Companies Page
     Given the user is logged in successfully
     And the user clicks on companies menu
@@ -41,15 +41,15 @@ Feature: Companies Page Features
       | Corporate Investor       | United Kingdom       |      4     |
       | Family Office            | South Africa         |      1     |
 
-
+  @e2e
   Scenario: Delete companies
-    Given the user is on companies page and search for "Banque"
+    Given the user is on companies page and search for "Egret Consultants"
     And the user selects all in the results
     Then the user clicks delete button and deletes all the companies in one
 
 
   Scenario: Merge companies
-    Given the user is on companies page and search for "Banque"
+    Given the user is on companies page and search for "Anatolia Capital"
     And the user selects all in the results
     Then the user clicks merge button and merges all the companies in one
 

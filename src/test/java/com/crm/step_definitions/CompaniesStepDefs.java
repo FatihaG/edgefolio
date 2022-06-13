@@ -42,7 +42,7 @@ public class CompaniesStepDefs {
         CompanyPage companyPage = new CompanyPage();
         BrowserUtils.waitFor(3);
         List<WebElement> numRows = Driver.get().findElements(By.xpath("//table[@class='table companies']/tbody/tr"));
-        Assert.assertEquals(19, numRows.size());
+        Assert.assertEquals(count, numRows.size());
     }
 
     @When("with given keyword number of companies should be as below")
@@ -110,25 +110,28 @@ public class CompaniesStepDefs {
         companyPage.checkBoxAll.click();
     }
     @Then("the user clicks delete button and deletes all the companies in one")
-    public void the_user_clicks_delete_button_and_deletes_all_the_companies_in_one() {
+    public void the_user_clicks_delete_button_and_deletes_all_the_companies_in_one() throws Exception{
         CompanyPage companyPage = new CompanyPage();
         BrowserUtils.waitFor(1);
+        if (companyPage.deleteButton.isDisplayed()) {
+            throw new Exception("No records found!");
+        }
         companyPage.deleteButton.click();
         BrowserUtils.waitFor(1);
-        companyPage.noButton.click();
+        companyPage.yesButton.click();
+        List<WebElement> numRows = Driver.get().findElements(By.xpath("//table[@class='table companies']/tbody/tr"));
+        Assert.assertEquals(0, numRows.size());
 
     }
 
-
-
     @Then("the user clicks merge button and merges all the companies in one")
-    public void the_user_clicks_merge_button_and_merges_all_the_companies_in_one() {
+    public void the_user_clicks_merge_button_and_merges_all_the_companies_in_one() throws Exception {
         CompanyPage companyPage = new CompanyPage();
-        companyPage.checkBoxAll.click();
+        if (companyPage.mergeButton.isDisplayed()) {
+            throw new Exception("No records found!");
+        }
         companyPage.mergeButton.click();
         BrowserUtils.waitFor(1);
-        Select options = new Select(companyPage.mergeSelect);
-        System.out.println(options.getWrappedElement().getText());
     }
 
 
