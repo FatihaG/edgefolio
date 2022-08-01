@@ -1,6 +1,6 @@
 Feature: Users should be able to login
 
-  @san
+  @san1
    Scenario: Bypass pop-up button
     Given the user is on the login page
     And cookie pop-up disappears
